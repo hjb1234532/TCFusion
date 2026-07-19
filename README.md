@@ -1,6 +1,6 @@
 # TCFusion
 
-Thermal Conduction Guided Fusion Network — an infrared-visible image fusion system with simultaneous semantic segmentation.
+TCFusion — an infrared-visible image fusion network based on thermal conduction physics.
 
 TCFusion models fusion as a heat conduction physical process: feature decomposition uses iterative thermal diffusion equations, and cross-modal fusion uses physically-inspired diffusion modules.
 
@@ -22,13 +22,11 @@ The model takes paired IR + visible images (Y channel from YCbCr) and produces:
 2. `recon_vis` — self-reconstruction of visible
 3. `recon_dec_ir` — cross-reconstruction (fused minus VIS features)
 4. `recon_dec_vis` — cross-reconstruction (fused minus IR features)
-5. `seg_res` — segmentation map (if dataset has labels)
-6. `fus` — final fused image
+5. `fus` — final fused image
 
 ### Loss Components
 
 - **Reconstruction**: L1 + SSIM (self and cross)
-- **Segmentation**: CrossEntropy + Dice
 - **FDC Loss**: Frequency Decomposition Consistency (low-freq: intensity + SSIM, high-freq: gradient + edge)
 
 ## Quick Start
@@ -74,7 +72,6 @@ TCFusion/
 ├── utils/
 │   ├── model_utils.py          # Checkpoint save/load
 │   ├── MEF_SSIM_loss.py        # SSIM loss + FusionLoss
-│   ├── dice.py                 # Dice loss for segmentation
 │   ├── functional.py           # Focal loss, soft dice, etc.
 │   ├── dir_utils.py            # Directory utilities
 │   └── image_utils.py          # PSNR, image saving
@@ -105,19 +102,19 @@ TCFusion/
 
 ## Datasets
 
-| Dataset | NUM_CLASSES | Segmentation |
-|---------|-------------|-------------|
-| MFNet | 9 | Yes |
-| Potsdam | 6 | Yes |
-| WHU | 8 | Yes |
-| M3FD | — | No |
-| LLVIP | — | No |
+| Dataset | NUM_CLASSES |
+|---------|-------------|
+| MFNet | 9 |
+| Potsdam | 6 |
+| WHU | 8 |
+| M3FD | — |
+| LLVIP | — |
 
 ### Data Layout
 
 ```
 dataset/train/{dataset}/
-  ir/input/     ir/target/     rgb/input/     rgb/target/     seg/
+  ir/input/     ir/target/     rgb/input/     rgb/target/
 dataset/test/{dataset}/
   ir/           rgb/
 ```

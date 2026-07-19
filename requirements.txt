@@ -1,0 +1,11 @@
+torch>=1.9.0
+kornia
+yacs
+natsort
+warmup-scheduler
+tensorboard
+tqdm
+opencv-python
+numpy
+Pillow
+scikit-image

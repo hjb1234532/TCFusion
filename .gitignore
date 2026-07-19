@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data (large files, keep structure only)
+dataset/train/
+dataset/test/
+!dataset/train/.gitkeep
+!dataset/test/.gitkeep
+
+# Checkpoints
+checkpoints/**/*.pth
+!checkpoints/.gitkeep
+
+# Results
+results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tensorboard logs
+runs/
+logs/
+
+# Jupyter
+.ipynb_checkpoints/

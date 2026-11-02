@@ -1,0 +1,16 @@
+{
+  "diffusion_steps": 2,
+  "ir_dir": "dataset/train/mfnet/ir/input",
+  "vis_dir": "dataset/train/mfnet/rgb/input",
+  "output": "runs/t2_seed1234",
+  "epochs": 150,
+  "batch_size": 4,
+  "seed": 1234,
+  "lr": 0.00002,
+  "min_lr": 0.000001,
+  "warmup_epochs": 3,
+  "workers": 4,
+  "threads": 2,
+  "save_every": 10,
+  "device": "auto"
+}

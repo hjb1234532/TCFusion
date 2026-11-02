@@ -1,41 +1,23 @@
-# Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-env/
+.pytest_cache/
+.venv/
 venv/
-*.egg-info/
-dist/
-build/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Data (large files, keep structure only)
-dataset/train/
-dataset/test/
-!dataset/train/.gitkeep
-!dataset/test/.gitkeep
-
-# Checkpoints
-checkpoints/**/*.pth
-!checkpoints/.gitkeep
-
-# Results
-results/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Tensorboard logs
+dataset/
+data_local/
+checkpoints/
 runs/
-logs/
-
-# Jupyter
-.ipynb_checkpoints/
+results/
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.tar
+*.zip
+*.npz
+*.mat
+*.log
+.env
+.env.*
+.DS_Store
+.idea/

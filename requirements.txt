@@ -1,11 +1,6 @@
-torch>=1.9.0
-kornia
-yacs
-natsort
-warmup-scheduler
-tensorboard
-tqdm
-opencv-python
-numpy
-Pillow
-scikit-image
+# Versions verified for this T=2 source release (Python 3.8).
+# Install the appropriate CPU/CUDA PyTorch build before this file if needed.
+torch==2.1.0
+kornia==0.7.3
+numpy==1.23.5
+Pillow==10.4.0
